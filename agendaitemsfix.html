@@ -1,0 +1,96 @@
+<script type="text/javascript">
+// Removed function - changeRadio no longer needed - possible interference with clearRadio??
+/*window.onload=function(){
+
+function changeRadio() {
+var nodeList = document.getElementsByTagName("input");
+for(item in nodeList) {
+    if(nodeList[item].attr("type") == "radio") {
+     nodeList[item].setAttribute("type","checkbox"); 
+    }
+};
+}
+
+changeRadio();
+}*/
+  
+function clearRadio() {
+var nodeList = document.getElementsByTagName("input");
+console.log(nodeList.length);
+for (var i = 0; i < nodeList.length; i++) {
+    if(nodeList[i].getAttribute("type") == "radio") {
+     nodeList[i].checked = false; 
+    }
+  else if(nodeList[i].getAttribute("type") == "checkbox") {
+nodeList[i].checked = false;
+}
+};
+}
+
+(function ($) {
+   $(document).ready(function() { 
+
+	
+	// Fix alignment of agenda items on page
+	function agendafix(start,end){
+     
+     for(var i = start; i<=end; i++){
+        if($("#page-table > tbody > tr:nth-child("+i+") > td > table > tbody > tr > td:nth-child(2) > font > span").hasClass("error"))
+		{
+			$("#page-table > tbody > tr:nth-child("+i+") > td > table > tbody > tr > td:nth-child(1)").remove();
+			$("#page-table > tbody > tr:nth-child("+i+") > td > table > tbody > tr > td:nth-child(1)").css("width","100px");
+			$("#page-table > tbody > tr:nth-child("+i+") > td > table > tbody > tr > td:nth-child(2)").css("width","190px");
+			
+			}
+		else{
+		   $("#page-table > tbody > tr:nth-child("+i+") > td > table > tbody > tr > td:nth-child(1)").css("width","100px");
+		   $("#page-table > tbody > tr:nth-child("+i+") > td > table > tbody > tr > td:nth-child(2)").css("width","190px");
+		   $("#page-table > tbody > tr:nth-child("+i+") > td > table > tbody > tr > td:nth-child(3)").remove();
+		   
+		}
+         }
+   }
+     
+          agendafix(12,36);
+		  
+  });
+
+
+
+
+$('form').submit(function(event) { 
+
+var nodeList = document.getElementsByTagName("input"); var counter = 0;
+var waitlistValues = [ "aty751926_qty_waitlist", "aty751927_qty_waitlist", "aty751928_qty_waitlist", "aty751929_qty_waitlist", "aty751930_qty_waitlist", "aty751931_qty_waitlist", "aty751932_qty_waitlist", "aty751933_qty_waitlist", "aty759669_qty_waitlist", "aty759670_qty_waitlist", "aty759671_qty_waitlist", "aty759672_qty_waitlist"  ];
+var regValues = [ "aty751926_qty", "aty751927_qty", "aty751928_qty", "aty751929_qty", "aty751930_qty", "aty751931_qty", "aty751932_qty", "aty751933_qty", "aty759669_qty", "aty759670_qty", "aty759671_qty", "aty759672_qty" ];
+
+
+for(i=0; i < nodeList.length; i++) {
+    if(nodeList[i].getAttribute("type") == "radio" && nodeList[i].checked == true) {
+       var waitlist = 0;
+       checkloop: for (j=0; j < waitlistValues.length; j++) {
+         if (nodeList[i].getAttribute("value") == waitlistValues[j]) {
+         waitlist++;
+         break checkloop;
+}
+else { continue; }
+         }
+
+       if(waitlist > 0) { }
+       else { counter++;  }
+
+    }
+    }
+     if (counter > 1) {
+	    alert("Please do not select more than one session");
+	    event.preventDefault();
+    }
+else if (counter == 0) {
+          alert("Please select at least one session");
+          event.preventDefault();
+}
+	
+});
+}(jQuery));
+</script>
+<div align="center"><button class="btn btn-default" onclick="clearRadio()" type="button">Clear selections</button></div>
