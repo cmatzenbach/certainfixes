@@ -1,4 +1,4 @@
-Multi-part solution for managing agenda item registration when each item is in its own agenda section.  Certain will by default treat these as separate sections and allow registrants to select as many of these items as they want.  This script has three functions:
+Multi-part solution for managing agenda item registration when each item is in its own agenda section.  Certain will by default treat these as separate sections and allow registrants to select as many of these items as they want.  This script has four functions:
 
 1. Prevents users from selecting more than one agenda item, as displayed on agenda page
 2. Displays error message to users if they do not selecting any agenda items, and prevents them from progressing in form
