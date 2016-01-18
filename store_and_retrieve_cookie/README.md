@@ -11,4 +11,6 @@
 -Pulls registrant data from cookie set on first page<br />
 -Pulls all populated information into new array; concatenates array, and stores all data in a cookie<br />
 
-<strong>Third file - </strong>
+<strong>Third file - eventattendees-autopopulate.js</strong><br />
+-Pulls all data from cookie stored on last page<br />
+-Auto-populates main event attendees info from last page<br />
