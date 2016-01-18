@@ -37,7 +37,19 @@ var dataArray = x.split(",");
 var questionsArray = [
 'reg_ans_field04',
 'reg_ans_field05',
-'reg_ans_field06'
+'reg_ans_field06',
+'reg_ans_field07',
+'reg_ans_field08',
+'reg_ans_field09',
+'reg_ans_field10',
+'reg_ans_field11',
+'reg_ans_field13',
+'reg_ans_field12',
+'reg_ans_field14',
+'reg_ans_field15',
+'reg_ans_field16',
+'reg_ans_field17',
+'reg_ans_field18'
 ];
 
 var j = 0;
