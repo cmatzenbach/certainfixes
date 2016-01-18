@@ -6,9 +6,9 @@
 -Takes first name, last name, and email address of registrant (from Registrant Details page) and stores in cookie.
 
 <strong>Second file - dinnerattendees-store.js</strong><br />
--Creates object for all entered attendee data
--MUST UPDATE - questionsArray - update with IDs of your "input" fields
--Pulls registrant data from cookie set on first page
--Pulls all populated information into new array; concatenates array, and stores all data in a cookie
+-Creates object for all entered attendee data<br />
+-MUST UPDATE - questionsArray - update with IDs of your "input" fields<br />
+-Pulls registrant data from cookie set on first page<br />
+-Pulls all populated information into new array; concatenates array, and stores all data in a cookie<br />
 
 <strong>Third file - </strong>
